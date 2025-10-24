@@ -28,26 +28,53 @@
 
     // }
 
-    $nama = "dira";
-    $nilai = 60;
+    // $nama = "dira";
+    // $nilai = 60;
 
-    if($nilai > 85) {
-       echo "Halo $nama, nilai $nilai, grade A";
-    }elseif($nilai > 70-84) {
-        echo "Halo $nama, nilai $nilai, grade B";
-    }elseif($nilai > 60-69) {
-        echo "Halo $nama, nilai $nilai, grade C";
-    }elseif($nilai > 50-59) {
-        echo "Halo $nama, nilai $nilai, grade D";
-    }else {
-        echo "Halo $nama, nilai $nilai, grade E";
-    }
+    // if($nilai > 85) {
+    //    echo "Halo $nama, nilai $nilai, grade A";
+    // }elseif($nilai > 70-84) {
+    //     echo "Halo $nama, nilai $nilai, grade B";
+    // }elseif($nilai > 60-69) {
+    //     echo "Halo $nama, nilai $nilai, grade C";
+    // }elseif($nilai > 50-59) {
+    //     echo "Halo $nama, nilai $nilai, grade D";
+    // }else {
+    //     echo "Halo $nama, nilai $nilai, grade E";
+    // }
 
     /* if($nilai > 50) {
     echo "Kamu lulus";
     }else {
     echo "Kamu tidak lulus";
     } */
+
+    $hari = 10;
+    switch($hari) {
+        case 1:
+            echo "Hari Senin";
+            break;
+        case 2:
+            echo "Hari Selasa";
+            break;
+        case 3:
+            echo "Hari Rabu";
+            break;
+        case 4:
+            echo "Hari Kamis";
+            break;
+        case 5:
+            echo "Hari Jumat";
+            break;
+        case 6:
+            echo "Hari Sabtu";
+            break;
+        case 7:
+            echo "Hari Minggu";
+            break;
+        default:
+            echo "Hari tidak diketahui";
+    }
     ?>
 </body>
 </html>
