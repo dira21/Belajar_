@@ -1,8 +1,9 @@
 <?php
 #1 Meng-koneksikan PHP ke MYSQL
-include("koneksi.php"); 
+include("../koneksi.php"); 
 
 #2 Mengambil value dari form tambah
+$id = $_POST['id'];
 $nama = $_POST['nama'];
 $nisn = $_POST['nisn'];
 $tp_lahir = $_POST['tp_lahir'];
@@ -13,14 +14,14 @@ $jk = $_POST['jk'];
 $jur = $_POST['jur'];
 
 #3 Query Insert(proses tambah data)
-$query = "INSERT INTO biodata (nama,nisn,tp_lahir,tg_lahir,alamat,email,jk,jur) VALUES ('$nama', '$nisn', '$tp_lahir', '$tg_lahir', '$alamat', '$email', '$jk', '$jur')";
+$query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk', jur='$jur' WHERE id='$id'";
 
-$tambah = mysqli_query($koneksi, $query);
+$edit = mysqli_query($koneksi, $query);
 
 #4 Jika berhasil triggernya apa?
-if($tambah){
+if($edit){
     header("location:index.php");
 }else{
-    echo "Data gagal ditambah";
+    echo "Data gagal diedit";
 }
 ?> 
