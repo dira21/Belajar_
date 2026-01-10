@@ -7,6 +7,8 @@ $idhapus = $_GET['id'];
 $qry = "DELETE FROM biodata WHERE id = '$idhapus'";
 # menjalankan query
 $hapus = mysqli_query($koneksi,$qry);
+unlink("../fotosiswa/".$_GET['foto']);
+
 # mengalihkan halaman
 header("location:index.php");
 ?>

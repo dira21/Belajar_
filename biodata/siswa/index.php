@@ -326,6 +326,9 @@
                                             <div class="modal-body">
                                                 <table class="table">
                                                 <tbody>
+                                                  <tr>
+                                                    <td colspan="2"><img src="../fotosiswa/<?= $data['foto'] ?>" alt="" width="100px"></td>
+                                                  </tr>
                                                     <tr>
                                                         <td>Nama</td>
                                                         <th scope="row"><?=$data['nama']?></th>
