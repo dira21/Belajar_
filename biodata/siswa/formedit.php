@@ -25,7 +25,7 @@ $data = mysqli_fetch_array($edit);
         <div class="row my-5">
             <div class="col-8 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <div class="card-header bg-primary-subtle">
+                    <div class="card-header">
                         <b>FORM EDIT BIODATA SISWA</b>
                     </div>
                     <div class="card-body">
@@ -86,8 +86,9 @@ $data = mysqli_fetch_array($edit);
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Foto</label>
-                                <input name="foto" type="file" class="form-control" id="exampleInputEmail1"
+                                <input name="foto" type="file" accept="image/*" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Abaikan jika foto tidak diubah</div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
