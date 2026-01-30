@@ -78,10 +78,18 @@ $data = mysqli_fetch_array($edit);
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jurusan</label>
                                 <select class="form-control" name="jur" id="">
-                                    <option value="">-Pilih Jurusan-</option>
-                                    <option <?php echo $data['jur']=='IPA' ? 'selected' : '' ?> value="IPA">IPA</option>
-                                    <option <?php echo $data['jur']=='IPS' ? 'selected' : '' ?> value="IPS">IPS</option>
-                                    <option <?php echo $data['jur']=='Bahasa' ? 'selected' : '' ?> value="Bahasa">Bahasa</option>
+                                    <?php
+                                    //kode utk looping data jurusan
+                                     include_once("../koneksi.php");
+                                     $qry_jur = "SELECT * FROM jurusan";
+                                     $data_jur = mysqli_query($koneksi,$qry_jur);
+                                     foreach($data_jur as $item_jur){
+                                    ?>
+                                    <option <?php echo $data['id_jur']==$item_jur['id'] ? 'selected' : '' ?> value="<?= $item_jur['id'] ?>"><?= $item_jur['kode_jur'] ?> - <?= $item_jur['nama_jur'] ?></option>
+                                    <?php 
+                                    //end looping
+                                    } 
+                                    ?>
                                 </select>
                             </div>
                             <div class="mb-3">
