@@ -29,7 +29,7 @@
 
         #3. Query Insert (proses edit data)
         $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', 
-        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  jur='$jur', foto='$nama_foto' 
+        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur', foto='$nama_foto' 
         WHERE id='$id'";
 
         #hapus foto
@@ -43,7 +43,7 @@
     }else{
         #3. Query Insert (proses edit data)
         $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', 
-        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  jur='$jur' 
+        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur' 
         WHERE id='$id'";
     }
 
