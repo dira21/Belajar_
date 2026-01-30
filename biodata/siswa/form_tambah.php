@@ -71,9 +71,18 @@
                                 <label for="exampleInputEmail1" class="form-label">Jurusan</label>
                                 <select class="form-control" name="jur" id="">
                                     <option value="">-Pilih Jurusan-</option>
-                                    <option value="IPA">IPA</option>
-                                    <option value="IPS">IPS</option>
-                                    <option value="Bahasa">Bahasa</option>
+                                    <?php
+                                    //kode utk looping data jurusan
+                                     include_once("../koneksi.php");
+                                     $qry_jur = "SELECT * FROM jurusan";
+                                     $data_jur = mysqli_query($koneksi,$qry_jur);
+                                     foreach($data_jur as $item_jur){
+                                    ?>
+                                    <option value="<?= $item_jur['id'] ?>"><?= $item_jur['kode_jur'] ?> - <?= $item_jur['nama_jur'] ?></option>
+                                    <?php 
+                                    //end looping
+                                    } 
+                                    ?>
                                 </select>
                             </div>
                             <div class="mb-3">
