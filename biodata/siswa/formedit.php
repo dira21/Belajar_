@@ -85,11 +85,31 @@ $data = mysqli_fetch_array($edit);
                                      $data_jur = mysqli_query($koneksi,$qry_jur);
                                      foreach($data_jur as $item_jur){
                                     ?>
-                                    <option <?php echo $data['id_jur']==$item_jur['id'] ? 'selected' : '' ?> value="<?= $item_jur['id'] ?>"><?= $item_jur['kode_jur'] ?> - <?= $item_jur['nama_jur'] ?></option>
+                                    <option <?php echo $data['id_jur']==$item_jur['id'] ? 'selected' : '' ?> value="<?= $item_jur['id'] ?>"><?= $item_jur['kode_jurusan'] ?> - <?= $item_jur['nama_jurusan'] ?></option>
                                     <?php 
                                     //end looping
                                     } 
                                     ?>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Gelombang</label>
+                                <select class="form-control" name="gel" id="">
+                                    <option value="">-Pilih Gelombang-</option>
+                                    <?php 
+                                        //kode untuk looping datat gelombang
+                                        include_once('../koneksi.php');
+                                        $qry_gel = "SELECT * FROM gelombang";
+                                        $data_gel = mysqli_query($koneksi,$qry_gel);
+                                        foreach($data_gel as $item_gel){
+                                    ?>
+                                    <option <?php echo $data['id_gel'] == $item_gel['id'] ? 'selected' : '' ?> value="<?=$item_gel['id']?>"><?=$item_gel['nm_gelombang']?></option>
+                                    <?php
+                                        //penutup kode looping gelombang
+                                        }
+                                    ?>
+                                    
+                            </div>
                                 </select>
                             </div>
                             <div class="mb-3">

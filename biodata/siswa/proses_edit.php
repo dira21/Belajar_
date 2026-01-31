@@ -12,6 +12,7 @@
     $email = $_POST['email'];
     $jk = $_POST['jk'];
     $jur = $_POST['jur'];
+    $gel = $_POST['gel'];
     $nama_foto = $_FILES['foto']['name'];
     $tmp_foto = $_FILES['foto']['tmp_name'];
 
@@ -29,7 +30,7 @@
 
         #3. Query Insert (proses edit data)
         $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', 
-        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur', foto='$nama_foto' 
+        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur',id_gel='$gel', foto='$nama_foto' 
         WHERE id='$id'";
 
         #hapus foto
@@ -43,7 +44,7 @@
     }else{
         #3. Query Insert (proses edit data)
         $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', 
-        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur' 
+        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur',id_gel='$gel'
         WHERE id='$id'";
     }
 

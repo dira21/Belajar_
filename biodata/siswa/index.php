@@ -42,7 +42,7 @@
                                 include("../koneksi.php");
 
                                 #2. menulikan query menampilkan data
-                                $qry = "SELECT *, biodata.id AS ids, jurusan.id AS idj FROM biodata INNER JOIN jurusan ON biodata.id_jur = jurusan.id";
+                               $qry = "SELECT *, biodata.id AS ids, id_jur AS idj FROM biodata LEFT JOIN jurusan ON biodata.id_jur = jurusan.id LEFT JOIN gelombang ON biodata.id_gel = gelombang.id";
 
                                 #3. menjalankan query
                                 $tampil = mysqli_query($koneksi,$qry);
@@ -56,7 +56,7 @@
                                     <th scope="row"><?=$nomor++?></th>
                                     <td><?=$data['nama']?></td>
                                     <td><?=$data['nisn']?></td>
-                                    <td><?=$data['nama_jur']?></td>
+                                    <td><?=$data['nama_jurusan']?></td>
                                     <td><?=$data['tg_lahir']?></td>
                                     <td>
                                         <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$data['ids']?>"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -105,19 +105,14 @@
                                                         <td>Jenis Kelamin</td>
                                                         <th scope="row"><?=$data['jk']?></th>
                                                     </tr>
-<<<<<<< HEAD
-                                                    <tr>
                                                         <td>Jurusan</td>
-                                                        <th scope="row"><?=$data['jurusan']?></th>
+                                                        <th scope="row"><?=$data['nama_jurusan']?></th>
                                                     </tr>
-
-                                                     <tr>
+                                                    <tr>
                                                         <td>Gelombang</td>
-                                                        <th scope="row"><?=$data['gelombang']?></th>
+                                                         <th scope="row"><?=isset($data['nm_gelombang']) ? $data['nm_gelombang'] : '-'?></th>
                                                     </tr>
-=======
                                                     
->>>>>>> cdb69c53b41a17db46f83251014fc67f294a79c1
                                                 </tbody>
                                                 </table>
                                             </div>

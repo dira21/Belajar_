@@ -3,21 +3,11 @@
 include("../koneksi.php"); 
 
 #2 Mengambil value dari form tambah
-$nama = $_POST['nama'];
-$nisn = $_POST['nisn'];
-$tp_lahir = $_POST['tp_lahir'];
-$tg_lahir = $_POST['tg_lahir'];
-$alamat = $_POST['alamat'];
-$email = $_POST['email'];
-$jk = $_POST['jk'];
-$jur = $_POST['jur'];
-$nama_foto = $_FILES['foto']['name'];
-$tmp_foto = $_FILES['foto']['tmp_name'];
+$nm_gelombang = $_POST['nm_gelombang'];
+$th_akademik = $_POST['th_akademik']; 
 
 #3 Query Insert(proses tambah data)
-$query = "INSERT INTO biodata (nama,nisn,tp_lahir,tg_lahir,alamat,email,jk,id_jur,foto) VALUES ('$nama', '$nisn', '$tp_lahir', '$tg_lahir', '$alamat', '$email', '$jk', '$jur','$nama_foto')";
-
-move_uploaded_file($tmp_foto, "../fotosiswa/" . $nama_foto);
+$query = "INSERT INTO gelombang (nm_gelombang,th_akademik) VALUES ('$nm_gelombang', '$th_akademik')";
 
 $tambah = mysqli_query($koneksi, $query);
 

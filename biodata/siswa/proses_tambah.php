@@ -11,11 +11,12 @@ $alamat = $_POST['alamat'];
 $email = $_POST['email'];
 $jk = $_POST['jk'];
 $jur = $_POST['jur'];
+$gel = $_POST['gel'];
 $nama_foto = $_FILES['foto']['name'];
 $tmp_foto = $_FILES['foto']['tmp_name'];
 
 #3 Query Insert(proses tambah data)
-$query = "INSERT INTO biodata (nama,nisn,tp_lahir,tg_lahir,alamat,email,jk,id_jur,foto) VALUES ('$nama', '$nisn', '$tp_lahir', '$tg_lahir', '$alamat', '$email', '$jk', '$jur','$nama_foto')";
+$query = "INSERT INTO biodata (nama,nisn,tp_lahir,tg_lahir,alamat,email,jk,id_jur,id_gel,foto) VALUES ('$nama', '$nisn', '$tp_lahir', '$tg_lahir', '$alamat', '$email', '$jk', '$jur','$gel','$nama_foto')";
 
 move_uploaded_file($tmp_foto, "../fotosiswa/" . $nama_foto);
 

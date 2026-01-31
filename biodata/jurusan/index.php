@@ -52,8 +52,8 @@
                                 ?>
                                 <tr>
                                     <th scope="row"><?=$nomor++?></th>
-                                    <td><?=$data['kode_jur']?></td>
-                                    <td><?=$data['nama_jur']?></td>
+                                    <td><?=$data['kode_jurusan']?></td>
+                                    <td><?=$data['nama_jurusan']?></td>
                                     <td>
                                 
                                         <a href="formedit.php?id=<?=$data['id']?>" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -70,7 +70,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                Yakin Data Dengan Nama Jurusan <?=$data['nama_jur']?> Ingin Dihapus?
+                                                Yakin Data Dengan Nama Jurusan <?=$data['nama_jurusan']?> Ingin Dihapus?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -3,11 +3,11 @@
 include("../koneksi.php"); 
 
 #2 Mengambil value dari form tambah
-$kode_jur = $_POST['kode_jur'];
-$nama_jur = $_POST['nama_jur']; 
+$kode_jurusan = $_POST['kode_jurusan'];
+$nama_jurusan = $_POST['nama_jurusan']; 
 
 #3 Query Insert(proses tambah data)
-$query = "INSERT INTO jurusan (kode_jur,nama_jur) VALUES ('$kode_jur', '$nama_jur')";
+$query = "INSERT INTO jurusan (kode_jurusan,nama_jurusan) VALUES ('$kode_jurusan', '$nama_jurusan')";
 
 $tambah = mysqli_query($koneksi, $query);
 

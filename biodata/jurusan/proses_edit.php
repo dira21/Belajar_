@@ -4,11 +4,11 @@
 
     #2. Mengambil Value dari Form Tambah
     $id = $_POST['id'];
-    $kode_jur = $_POST['kode_jur'];
-    $nama_jur = $_POST['nama_jur'];
+    $kode_jurusan = $_POST['kode_jurusan'];
+    $nama_jurusan = $_POST['nama_jurusan'];
 
         #3. Query Insert (proses edit data)
-       $query = "UPDATE jurusan SET kode_jur='$kode_jur', nama_jur='$nama_jur' 
+       $query = "UPDATE jurusan SET kode_jurusan='$kode_jurusan', nama_jurusan='$nama_jurusan' 
     WHERE id='$id'";
 
     $edit = mysqli_query($koneksi,$query);

@@ -25,12 +25,12 @@
                         <form action="proses_tambah.php" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Kode Jurusan</label>
-                                <input name="kode_jur" type="text" class="form-control" id="exampleInputEmail1"
+                                <input name="kode_jurusan" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Jurusan</label>
-                                <input name="nama_jur" type="text" class="form-control" id="exampleInputEmail1"
+                                <input name="nama_jurusan" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             

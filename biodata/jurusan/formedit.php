@@ -33,12 +33,12 @@ $data = mysqli_fetch_array($edit);
                             <input type="hidden" name="id" value="<?=$data['id']?>">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Kode jurusan</label>
-                                <input value="<?=$data['kode_jur']?>" readonly name="kode_jur" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value="<?=$data['kode_jurusan']?>" readonly name="kode_jur" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Jurusan</label>
-                                <input value="<?=$data['nama_jur']?>" name="nama_jur" type="text" class="form-control" id="exampleInputEmail1"
+                                <input value="<?=$data['nama_jurusan']?>" name="nama_jur" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div>
                             

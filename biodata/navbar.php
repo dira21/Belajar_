@@ -17,14 +17,12 @@
          <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost/IS63/biodata/dosen">Dosen</a>
         </li>
-<<<<<<< HEAD
 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost/IS63/biodata/gelombang">Gelombang</a>
-=======
->>>>>>> cdb69c53b41a17db46f83251014fc67f294a79c1
+        </li>
+
       </ul>
-      
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-secondary" type="submit">Search</button>
