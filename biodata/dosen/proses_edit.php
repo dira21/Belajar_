@@ -4,32 +4,28 @@
 
     #2. Mengambil Value dari Form Tambah
     $id = $_POST['id'];
+    $nidn = $_POST['nidn'];
     $nama = $_POST['nama'];
-    $nisn = $_POST['nisn'];
-    $tp_lahir = $_POST['tp_lahir'];
-    $tg_lahir = $_POST['tg_lahir'];
-    $alamat = $_POST['alamat'];
+    $rumpun = $_POST['rumpun'];
     $email = $_POST['email'];
-    $jk = $_POST['jk'];
-    $jur = $_POST['jur'];
+    $no_hp = $_POST['no_hp'];
     $nama_foto = $_FILES['foto']['name'];
     $tmp_foto = $_FILES['foto']['tmp_name'];
 
     if($nama_foto != ""){
         #hapus foto lama
-        $qry = "SELECT * FROM biodata WHERE id = '$id'";
+        $qry = "SELECT * FROM dosen WHERE id = '$id'";
         $hapus_foto = mysqli_query($koneksi,$qry);
         $data = mysqli_fetch_array($hapus_foto);
         $nama_foto_hapus = $data['foto'];
-        $lokasi_foto = "../fotosiswa/".$nama_foto_hapus;
+        $lokasi_foto = "../fotodosen/".$nama_foto_hapus;
 
         if(file_exists($lokasi_foto)){
             unlink($lokasi_foto);
         }
 
         #3. Query Insert (proses edit data)
-        $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', 
-        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur', foto='$nama_foto' 
+        $query = "UPDATE dosen SET nidn='$nidn', nama='$nama',rumpun='$rumpun', email='$email',no_hp='$no_hp', foto='$nama_foto' 
         WHERE id='$id'";
 
         #hapus foto
@@ -39,11 +35,10 @@
         // }
 
         #tambahkan foto
-        move_uploaded_file($tmp_foto,"../fotosiswa/$nama_foto");
+        move_uploaded_file($tmp_foto,"../fotodosen/$nama_foto");
     }else{
         #3. Query Insert (proses edit data)
-        $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tp_lahir='$tp_lahir', 
-        tg_lahir='$tg_lahir', alamat='$alamat', email='$email', jk='$jk',  id_jur='$jur' 
+        $query = "UPDATE dosen SET nidn='$nidn', nama='$nama',rumpun='$rumpun', email='$email',no_hp='$no_hp', foto='$nama_foto' 
         WHERE id='$id'";
     }
 

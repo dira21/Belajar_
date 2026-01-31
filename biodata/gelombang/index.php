@@ -105,15 +105,7 @@
                                                         <td>Jenis Kelamin</td>
                                                         <th scope="row"><?=$data['jk']?></th>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Jurusan</td>
-                                                        <th scope="row"><?=$data['jurusan']?></th>
-                                                    </tr>
-
-                                                     <tr>
-                                                        <td>Gelombang</td>
-                                                        <th scope="row"><?=$data['gelombang']?></th>
-                                                    </tr>
+                                                    
                                                 </tbody>
                                                 </table>
                                             </div>

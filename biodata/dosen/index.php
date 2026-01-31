@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Siswa</title>
+    <title>Biodata Dosen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -21,7 +21,7 @@
             <div class="col-10 m-auto">
                 <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
                     <div class="card-header">
-                        <b>BIODATA SISWA</b>
+                        <b>BIODATA DOSEN</b>
                         <a href="form_tambah.php" class="float-end btn btn-primary btn-sm"><i class="fa-solid fa-user-plus"></i> Tambah data</a>
                     </div>
                     <div class="card-body">
@@ -29,10 +29,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NISN</th>
-                                    <th scope="col">Jurusan</th>
-                                    <th scope="col">Tanggal Lahir</th>
+                                    <th scope="col">Nama Dosen</th>
+                                    <th scope="col">Rumpun</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -42,7 +40,7 @@
                                 include("../koneksi.php");
 
                                 #2. menulikan query menampilkan data
-                                $qry = "SELECT *, biodata.id AS ids, jurusan.id AS idj FROM biodata INNER JOIN jurusan ON biodata.id_jur = jurusan.id";
+                                $qry = "SELECT * FROM dosen";
 
                                 #3. menjalankan query
                                 $tampil = mysqli_query($koneksi,$qry);
@@ -55,16 +53,14 @@
                                 <tr>
                                     <th scope="row"><?=$nomor++?></th>
                                     <td><?=$data['nama']?></td>
-                                    <td><?=$data['nisn']?></td>
-                                    <td><?=$data['nama_jur']?></td>
-                                    <td><?=$data['tg_lahir']?></td>
+                                    <td><?=$data['rumpun']?></td>
                                     <td>
-                                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$data['ids']?>"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                        <a href="formedit.php?id=<?=$data['ids']?>" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalhapus<?=$data['ids']?>"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$data['id']?>"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        <a href="formedit.php?id=<?=$data['id']?>" class="btn btn-info btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalhapus<?=$data['id']?>"><i class="fa-solid fa-trash"></i></button>
 
                                         <!-- Modal Detail-->
-                                        <div class="modal fade" id="exampleModal<?=$data['ids']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModal<?=$data['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                             <div class="modal-header bg-warning">
@@ -75,45 +71,30 @@
                                                 <table class="table">
                                                 <tbody>
                                                   <tr>
-                                                    <td colspan="2"><img src="../fotosiswa/<?= $data['foto'] ?>" alt="" width="100px"></td>
+                                                    <td colspan="2"><img src="../fotodosen/<?= $data['foto'] ?>" alt="" width="100px"></td>
                                                   </tr>
                                                     <tr>
-                                                        <td>Nama</td>
+                                                        <td>Nidn</td>
+                                                        <th scope="row"><?=$data['nidn']?></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nama Dosen</td>
                                                         <th scope="row"><?=$data['nama']?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>NISN</td>
-                                                        <th scope="row"><?=$data['nisn']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tempat Lahir</td>
-                                                        <th scope="row"><?=$data['tp_lahir']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tanggal Lahir</td>
-                                                        <th scope="row"><?=$data['tg_lahir']?></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Alamat</td>
-                                                        <th scope="row"><?=$data['alamat']?></th>
+                                                        <td>Rumpun</td>
+                                                        <th scope="row"><?=$data['rumpun']?></th>
                                                     </tr>
                                                     <tr>
                                                         <td>Email</td>
                                                         <th scope="row"><?=$data['email']?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jenis Kelamin</td>
-                                                        <th scope="row"><?=$data['jk']?></th>
+                                                        <td>No Hp</td>
+                                                        <th scope="row"><?=$data['no_hp']?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jurusan</td>
-                                                        <th scope="row"><?=$data['jurusan']?></th>
-                                                    </tr>
-
-                                                     <tr>
-                                                        <td>Gelombang</td>
-                                                        <th scope="row"><?=$data['gelombang']?></th>
-                                                    </tr>
+                                                        
                                                 </tbody>
                                                 </table>
                                             </div>
