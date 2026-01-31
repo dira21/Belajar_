@@ -105,6 +105,7 @@
                                                         <td>Jenis Kelamin</td>
                                                         <th scope="row"><?=$data['jk']?></th>
                                                     </tr>
+<<<<<<< HEAD
                                                     <tr>
                                                         <td>Jurusan</td>
                                                         <th scope="row"><?=$data['jurusan']?></th>
@@ -114,6 +115,9 @@
                                                         <td>Gelombang</td>
                                                         <th scope="row"><?=$data['gelombang']?></th>
                                                     </tr>
+=======
+                                                    
+>>>>>>> cdb69c53b41a17db46f83251014fc67f294a79c1
                                                 </tbody>
                                                 </table>
                                             </div>

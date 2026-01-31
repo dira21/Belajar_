@@ -17,9 +17,12 @@
          <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost/IS63/biodata/dosen">Dosen</a>
         </li>
+<<<<<<< HEAD
 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost/IS63/biodata/gelombang">Gelombang</a>
+=======
+>>>>>>> cdb69c53b41a17db46f83251014fc67f294a79c1
       </ul>
       
       <form class="d-flex" role="search">
