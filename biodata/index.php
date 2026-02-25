@@ -23,6 +23,7 @@
                     </div>
                     <div class="card-body">
                         <h2>Selamat Datang di Aplikasi Biodata Siswa </h2>
+                        <a href="logout.php" class="btn btn-danger mt-3">Logout</a>
                     </div>
                 </div>
             </div>
